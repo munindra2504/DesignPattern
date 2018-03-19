@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DesignPattern.Creational_Patterns.Singleton
+namespace DesignPattern.CreationalPatterns.SingletonPattern
 {
     public class Singleton
     {
         private int counter = 0;
         private static readonly Singleton _instance;
 
-        private static object obj;
+        private static object obj = new object();
         public static Singleton Instance {
             get
             {
@@ -31,9 +31,14 @@ namespace DesignPattern.Creational_Patterns.Singleton
             }
         }
 
+        public void IncrementCounter()
+        {
+            counter++;
+        }
+
         public int GetCounter()
         {
-            return counter++;
+            return counter;
         }
     }
 }
